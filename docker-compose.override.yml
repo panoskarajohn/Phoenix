@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  track.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=docker
+    ports:
+      - "80"

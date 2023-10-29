@@ -1,0 +1,88 @@
+version: '3.4'
+
+services:
+  track.api:
+    image: ${DOCKER_REGISTRY-}trackapi
+    build:
+      context: .
+      dockerfile: Services/Track/Track.Api/Dockerfile
+    networks:
+      phoenix:
+  
+  otel-collector:
+    # https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
+    container_name: otel
+    hostname: otel
+    image: otel/opentelemetry-collector-contrib:0.75.0
+    command: [ "--config=/etc/otel-collector-config.yaml" ]
+    volumes:
+      - ./otel/otel.yml:/etc/otel-collector-config.yaml
+    restart: unless-stopped
+    ports:
+      - 8888:8888   # Prometheus metrics exposed by the collector
+      - 8889:8889   # Prometheus exporter metrics
+      - 4317:4317   # OTLP gRPC receiver
+      - 9200:55679  # zpages
+      - 13133:13133 # Health check
+    networks:
+      phoenix:
+    
+  loki:
+    # https://github.com/grafana/loki/releases
+    image: grafana/loki:2.8.0
+    container_name: loki
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./loki/loki.yml:/etc/loki/local-config.yaml
+      - loki:/data/loki
+    restart: unless-stopped
+    ports:
+      - 3100:3100
+    networks:
+      phoenix:
+    
+  prometheus:
+    # https://github.com/prometheus/prometheus/releases
+    image: prom/prometheus:v2.43.0
+    container_name: prometheus
+    hostname: prometheus
+    restart: unless-stopped
+    ports:
+      - 9090:9090
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus:/prometheus
+    networks:
+      phoenix:
+    
+  grafana:
+    # https://github.com/grafana/grafana/releases
+    image: grafana/grafana:9.4.7
+    container_name: grafana
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    restart: unless-stopped
+    user: root
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+      - loki
+    networks:
+      phoenix:
+  
+networks:
+  phoenix:
+    
+volumes:
+  prometheus:
+  loki:
+  grafana-data:
