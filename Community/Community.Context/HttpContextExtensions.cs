@@ -64,7 +64,7 @@ public static class HttpContextExtensions
             return context.User.Identity.Name;
         }
         
-        if(context.Request.Headers.TryGetValue("x-user-id", out var userId))
+        if(context.Request.Headers.TryGetValue("user-id", out var userId))
             return userId;
 
         return String.Empty;
