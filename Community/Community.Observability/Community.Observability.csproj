@@ -28,6 +28,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Community.Context\Community.Context.csproj" />
+      <ProjectReference Include="..\Community.Extensions\Community.Extensions.csproj" />
     </ItemGroup>
+
+
+
+
 
 </Project>
