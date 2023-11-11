@@ -31,10 +31,24 @@ public static class Extensions
 
         return services;
     }
+    
+    private static IServiceCollection AddEvents(this IServiceCollection services)
+    {
+        services.AddSingleton<IEventDispatcher, EventDispatcher>();
+        services.Scan(s =>
+            s.FromAssemblies(AppDomain.CurrentDomain.GetAssemblies())
+                .AddClasses(c => c.AssignableTo(typeof(IEventHandler<>))
+                    .WithoutAttribute(typeof(Decorator)))
+                .AsImplementedInterfaces()
+                .WithTransientLifetime());
+
+        return services;
+    }
 
 
     public static IServiceCollection AddCqrs(this IServiceCollection services) => services
         .AddCommands()
+        .AddEvents()
         .AddQueries();
 
 
