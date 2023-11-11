@@ -123,11 +123,11 @@ public static class Extensions
         {
             loggerConfiguration.WriteTo.OpenTelemetry(options =>
             {
-                options.Endpoint = $"{options.Endpoint}/v1/logs";
+                options.Endpoint = $"{openTelemetryOptions.Endpoint}/v1/logs";
                 options.Protocol = Serilog.Sinks.OpenTelemetry.OtlpProtocol.Grpc;
                 options.ResourceAttributes = new Dictionary<string, object>
                 {
-                    ["service.name"] = appOptions.Name
+                    ["service.name"] = openTelemetryOptions.ServiceName
                 };
             });
         }

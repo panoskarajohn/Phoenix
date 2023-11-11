@@ -6,7 +6,7 @@ namespace Community.Context;
 
 public static class HttpContextExtensions
 {
-    internal const string CorrelationIdKey = "correlation-id";
+    public const string CorrelationIdKey = "correlation-id";
 
     public static IApplicationBuilder UseCorrelationId(this IApplicationBuilder app)
         => app.Use(async (ctx, next) =>

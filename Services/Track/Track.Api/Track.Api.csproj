@@ -10,11 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Http" Version="7.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Community\Community.IdGenerator\Community.IdGenerator.csproj" />
     <ProjectReference Include="..\..\..\Community\Community.Observability\Community.Observability.csproj" />
+    <ProjectReference Include="..\..\..\Community\Community.Swagger\Community.Swagger.csproj" />
+    <ProjectReference Include="..\Track.Contracts\Track.Contracts.csproj" />
   </ItemGroup>
 
 

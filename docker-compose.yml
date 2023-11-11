@@ -6,10 +6,10 @@ services:
     build:
       context: .
       dockerfile: Services/Track/Track.Api/Dockerfile
-    ports:
-      - 6001:6001
     networks:
       phoenix:
+    depends_on: 
+     - otel-collector
   
   otel-collector:
     # https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
