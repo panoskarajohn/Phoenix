@@ -7,12 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+      <Folder Include="Commands\" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Community.Context.Abstractions\Community.Context.Abstractions.csproj" />
-    </ItemGroup>
-
 
 </Project>

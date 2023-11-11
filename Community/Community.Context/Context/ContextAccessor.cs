@@ -1,10 +1,12 @@
-﻿namespace Community.Context.Context;
+﻿using Community.Context.Abstractions;
+
+namespace Community.Context.Context;
 
 internal sealed class ContextAccessor
 {
     private static readonly AsyncLocal<ContextHolder> Holder = new();
 
-    public IContext Context
+    public IContext? Context
     {
         get => Holder.Value?.Context;
         set
@@ -12,7 +14,7 @@ internal sealed class ContextAccessor
             var holder = Holder.Value;
             if (holder != null)
             {
-                holder.Context = null;
+                holder.Context = null!;
             }
 
             if (value != null)

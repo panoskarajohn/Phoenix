@@ -1,4 +1,5 @@
 using Community.Context;
+using Community.Context.Abstractions;
 using Community.Extensions.Configuration;
 using Community.Observability.Logging.Options;
 using Community.Observability.Options;
@@ -32,10 +33,12 @@ public static class Extensions
     /// <param name="appSectionName"></param>
     /// <returns></returns>
     internal static IHostBuilder UseLogging(this IHostBuilder host,
-        Action<LoggerConfiguration> configure = null,
+        Action<LoggerConfiguration> configure = null!,
         string loggerSectionName = LoggerSectionName,
         string appSectionName = AppSectionName)
     {
+        if (configure == null) throw new ArgumentNullException(nameof(configure));
+        if (configure == null) throw new ArgumentNullException(nameof(configure));
         host.UseSerilog((context, loggerConfiguration) =>
         {
             if (string.IsNullOrWhiteSpace(loggerSectionName))
@@ -93,7 +96,10 @@ public static class Extensions
         Configure(loggerConfiguration, loggerOptions, appOptions, openTelemetryOptions);
     }
     
-    private static void Configure(LoggerConfiguration loggerConfiguration, LoggerOptions options, AppOptions appOptions, OpenTelemetryOptions openTelemetryOptions)
+    private static void Configure(LoggerConfiguration loggerConfiguration, 
+        LoggerOptions options, 
+        AppOptions appOptions, 
+        OpenTelemetryOptions openTelemetryOptions)
     {
         var consoleOptions = options.Console ?? new ConsoleOptions();
         var fileOptions = options.File ?? new Options.FileOptions();

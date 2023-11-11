@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: Services/Track/Track.Api/Dockerfile
+    ports:
+      - 6001:6001
     networks:
       phoenix:
   
@@ -86,3 +88,5 @@ volumes:
   prometheus:
   loki:
   grafana-data:
+    
+    

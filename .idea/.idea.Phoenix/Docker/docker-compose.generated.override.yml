@@ -1,0 +1,24 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  track.api:
+    build:
+      context: "C:\\Users\\Panos\\source\\repos\\Phoenix"
+      dockerfile: "Services/Track/Track.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/Track.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\Panos\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\Panos\\.nuget\\packages"
+    image: "trackapi:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Panos\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "C:\\Users\\Panos\\source\\repos\\Phoenix\\Services\\Track\\Track.Api:/app:rw"
+    - "C:\\Users\\Panos\\source\\repos\\Phoenix:/src:rw"
+    working_dir: "/app"

@@ -1,4 +1,4 @@
-﻿namespace Community.Context;
+namespace Community.Context.Abstractions;
 
 public interface IContext
 {

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Humanizer" Version="2.14.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+      <PackageReference Include="Scrutor" Version="4.2.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Community.Attributes\Community.Attributes.csproj" />
+      <ProjectReference Include="..\Community.Context.Abstractions\Community.Context.Abstractions.csproj" />
+      <ProjectReference Include="..\Community.CQRS.Abstractions\Community.CQRS.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>
