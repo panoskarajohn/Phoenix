@@ -37,8 +37,6 @@ public static class Extensions
         string loggerSectionName = LoggerSectionName,
         string appSectionName = AppSectionName)
     {
-        if (configure == null) throw new ArgumentNullException(nameof(configure));
-        if (configure == null) throw new ArgumentNullException(nameof(configure));
         host.UseSerilog((context, loggerConfiguration) =>
         {
             if (string.IsNullOrWhiteSpace(loggerSectionName))
