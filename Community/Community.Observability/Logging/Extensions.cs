@@ -33,7 +33,7 @@ public static class Extensions
     /// <param name="appSectionName"></param>
     /// <returns></returns>
     internal static IHostBuilder UseLogging(this IHostBuilder host,
-        Action<LoggerConfiguration> configure = null!,
+        Action<LoggerConfiguration>? configure = null,
         string loggerSectionName = LoggerSectionName,
         string appSectionName = AppSectionName)
     {
