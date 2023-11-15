@@ -2,7 +2,6 @@
 using Community.Context.Abstractions;
 using Community.IdGenerator;
 using Microsoft.AspNetCore.Mvc;
-using Track.Contracts.Commands;
 
 namespace Track.Api.Controllers;
 

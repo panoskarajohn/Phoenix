@@ -6,7 +6,7 @@ namespace Community.Validation;
 
 public static class Extensions
 {
-    public static IServiceCollection AddValidationDecorators(this IServiceCollection services)
+    public static IServiceCollection AddCqrsValidationDecorators(this IServiceCollection services)
     {
         services.TryDecorate(typeof(ICommandHandler<>), typeof(ValidateCommandHandlerDecorator<>));
         return services;

@@ -3,7 +3,7 @@ using Community.CQRS.Abstractions;
 
 namespace Track.Contracts.Commands;
 
-public class CreateTrackCommand : ICommand
+public record CreateTrackCommand : ICommand
 {
     [Hidden]
     public long Id { get; init; }

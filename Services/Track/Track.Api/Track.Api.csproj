@@ -19,7 +19,6 @@
     <ProjectReference Include="..\..\..\Community\Community.IdGenerator\Community.IdGenerator.csproj" />
     <ProjectReference Include="..\..\..\Community\Community.Observability\Community.Observability.csproj" />
     <ProjectReference Include="..\..\..\Community\Community.Swagger\Community.Swagger.csproj" />
-    <ProjectReference Include="..\Track.Contracts\Track.Contracts.csproj" />
   </ItemGroup>
 
 

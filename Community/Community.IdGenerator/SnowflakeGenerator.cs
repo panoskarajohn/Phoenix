@@ -12,7 +12,7 @@ internal class SnowflakeGenerator : IIdGenerator<long>
         Configure(generatorId);
     }
     
-    public long New() => _generator!.CreateId();
+    public long Generate() => _generator!.CreateId();
     
     void Configure(int generatorId)
     {

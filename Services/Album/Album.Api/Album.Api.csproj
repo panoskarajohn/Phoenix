@@ -13,4 +13,10 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Community\Community.IdGenerator\Community.IdGenerator.csproj" />
+      <ProjectReference Include="..\..\..\Community\Community.Observability\Community.Observability.csproj" />
+      <ProjectReference Include="..\..\..\Community\Community.Swagger\Community.Swagger.csproj" />
+    </ItemGroup>
+
 </Project>
