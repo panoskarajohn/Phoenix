@@ -72,7 +72,19 @@ services:
       - prometheus:/prometheus
     networks:
       phoenix:
-    
+  
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    restart: unless-stopped
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "phoenix-rabbit"
+    networks:
+      phoenix:
+  
   grafana:
     # https://github.com/grafana/grafana/releases
     image: grafana/grafana:9.4.7

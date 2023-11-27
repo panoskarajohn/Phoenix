@@ -14,6 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Brokers\RabbitMQ\Community.Rabbit.Cqrs.EventSubscriber\Community.Rabbit.Cqrs.EventSubscriber.csproj" />
+      <ProjectReference Include="..\..\..\Brokers\RabbitMQ\Community.Rabbit\Community.Rabbit.csproj" />
       <ProjectReference Include="..\..\..\Community\Community.IdGenerator\Community.IdGenerator.csproj" />
       <ProjectReference Include="..\..\..\Community\Community.Observability\Community.Observability.csproj" />
       <ProjectReference Include="..\..\..\Community\Community.Swagger\Community.Swagger.csproj" />

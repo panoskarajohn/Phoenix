@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Brokers\RabbitMQ\Community.Rabbit.Abstractions\Community.Rabbit.Abstractions.csproj" />
       <ProjectReference Include="..\..\..\Community\Community.CQRS\Community.CQRS.csproj" />
       <ProjectReference Include="..\..\..\Community\Community.Validation\Community.Validation.csproj" />
       <ProjectReference Include="..\Artist.Contracts\Artist.Contracts.csproj" />
