@@ -18,6 +18,7 @@
       <ProjectReference Include="..\..\..\Community\Community.Observability\Community.Observability.csproj" />
       <ProjectReference Include="..\..\..\Community\Community.Swagger\Community.Swagger.csproj" />
       <ProjectReference Include="..\Artist.Application\Artist.Application.csproj" />
+      <ProjectReference Include="..\Artist.Infrastructure\Artist.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Community\Community.Context.Abstractions\Community.Context.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\DataAccess\Community.Mongo\Community.Mongo.csproj" />
+      <ProjectReference Include="..\Artist.Core\Artist.Core.csproj" />
+    </ItemGroup>
+
 </Project>

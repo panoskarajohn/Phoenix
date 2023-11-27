@@ -1,4 +1,4 @@
-using Artist.Contracts;
+using Artist.Contracts.Commands;
 using Community.CQRS.Abstractions;
 using Community.IdGenerator;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +22,6 @@ public class ArtistController : ControllerBase
     {
         command = command with { Id = _idGenerator.Generate()};
         await _commandDispatcher.SendAsync(command);
-        return Ok();
+        return Ok(command.Id);
     }
 }

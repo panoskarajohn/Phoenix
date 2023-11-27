@@ -1,5 +1,6 @@
 ﻿using Artist.Application.Validation;
 using Artist.Contracts;
+using Artist.Contracts.Commands;
 using Community.CQRS;
 using Community.Validation;
 using FluentValidation;

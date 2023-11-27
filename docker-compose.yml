@@ -11,6 +11,20 @@ services:
     depends_on: 
      - otel-collector
   
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      phoenix:
+  
   otel-collector:
     # https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
     container_name: otel
@@ -88,5 +102,6 @@ volumes:
   prometheus:
   loki:
   grafana-data:
+  mongodb_data:
     
     

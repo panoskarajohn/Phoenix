@@ -1,7 +1,7 @@
 using Community.Attributes;
 using Community.CQRS.Abstractions;
 
-namespace Artist.Contracts;
+namespace Artist.Contracts.Commands;
 
 public record CreateArtistCommand : ICommand
 {
@@ -11,4 +11,5 @@ public record CreateArtistCommand : ICommand
     public string LastName { get; init; }
     public string ArtistNickname { get; init; }
     public string ArtistDescription { get; init; }
+    public DateTime BirthDate { get; init; }
 }
