@@ -107,7 +107,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.Rabbit.Abstractio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initializers", "Community\Initializers\Initializers.csproj", "{167402EF-D417-406E-A3EF-30ABFDBA7FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.Rabbit.Cqrs.EventSubscriber", "Brokers\RabbitMQ\Community.Rabbit.Cqrs.EventSubscriber\Community.Rabbit.Cqrs.EventSubscriber.csproj", "{0734F81E-CFC1-4EE1-97CF-4878334AE1AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.Rabbit.Cqrs", "Brokers\RabbitMQ\Community.Rabbit.Cqrs\Community.Rabbit.Cqrs.csproj", "{0734F81E-CFC1-4EE1-97CF-4878334AE1AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@ using Community.CQRS.Abstractions;
 using Community.Rabbit.Abstractions.Correlation;
 using Community.Rabbit.Abstractions.Publisher;
 
-namespace Community.Rabbit.Cqrs.EventSubscriber;
+namespace Community.Rabbit.Cqrs;
 
 internal sealed class ServiceBusMessageDispatcher : ICommandDispatcher, IEventDispatcher
 {

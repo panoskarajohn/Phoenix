@@ -3,7 +3,7 @@ using Community.Rabbit.Abstractions.Publisher;
 using Community.Rabbit.Abstractions.Subscriber;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Community.Rabbit.Cqrs.EventSubscriber;
+namespace Community.Rabbit.Cqrs;
 
 public static class Extensions
 {
