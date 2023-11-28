@@ -109,6 +109,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Initializers", "Community\I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.Rabbit.Cqrs", "Brokers\RabbitMQ\Community.Rabbit.Cqrs\Community.Rabbit.Cqrs.csproj", "{0734F81E-CFC1-4EE1-97CF-4878334AE1AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{7453D19A-D185-4B29-8428-11A2AA7B72D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage.API", "Storage\Storage.API\Storage.API.csproj", "{EE6B48EB-65C8-4722-9878-AE7CDDC9181C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -239,6 +243,10 @@ Global
 		{0734F81E-CFC1-4EE1-97CF-4878334AE1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0734F81E-CFC1-4EE1-97CF-4878334AE1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0734F81E-CFC1-4EE1-97CF-4878334AE1AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6B48EB-65C8-4722-9878-AE7CDDC9181C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6B48EB-65C8-4722-9878-AE7CDDC9181C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6B48EB-65C8-4722-9878-AE7CDDC9181C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6B48EB-65C8-4722-9878-AE7CDDC9181C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -285,6 +293,7 @@ Global
 		{58BE29F5-E331-48F8-8F24-1F368E9BD5C4} = {38703F1E-1ED1-4029-9FF9-ABB645DC8765}
 		{167402EF-D417-406E-A3EF-30ABFDBA7FCB} = {FBEB910C-C2CB-4B3F-95D9-BBBDCA9C4AA1}
 		{0734F81E-CFC1-4EE1-97CF-4878334AE1AF} = {38703F1E-1ED1-4029-9FF9-ABB645DC8765}
+		{EE6B48EB-65C8-4722-9878-AE7CDDC9181C} = {7453D19A-D185-4B29-8428-11A2AA7B72D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8AEB398-0CEB-4805-9E3B-C9FBD56DCBFA}
