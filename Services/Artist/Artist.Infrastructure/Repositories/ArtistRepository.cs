@@ -10,17 +10,15 @@ namespace Artist.Infrastructure.Repositories;
 public class ArtistRepository : IArtistRepository
 {
     private readonly IMongoRepository<ArtistDocument, long> _artistRepository;
-    private readonly IContext _context;
 
-    public ArtistRepository(IMongoRepository<ArtistDocument, long> artistRepository, IContext context)
+    public ArtistRepository(IMongoRepository<ArtistDocument, long> artistRepository)
     {
         _artistRepository = artistRepository;
-        _context = context;
     }
 
     public Task Add(ArtistAggregate artistAggregate)
     {
-        var artistDocument = ArtistToDocument.Map(artistAggregate, _context.UserId);
+        var artistDocument = ArtistToDocument.Map(artistAggregate);
         return _artistRepository.AddAsync(artistDocument);
     }
 }

@@ -74,7 +74,7 @@ services:
       phoenix:
   
   rabbitmq:
-    image: "rabbitmq:3-management"
+    build: ./rabbitmq
     restart: unless-stopped
     container_name: rabbitmq
     ports:

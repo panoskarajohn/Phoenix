@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.JavaScript;
 using Ardalis.GuardClauses;
 using Artist.Core.Base;
 using Artist.Core.DomainEvent;
@@ -12,9 +13,10 @@ public class ArtistAggregate : BaseAggregateRoot<long>
     public PersonalInformation PersonalInformation { get; private set; }
     public ArtistStatus ArtistStatus { get; private set; }
     public ArtistStatistics? ArtistStatistics { get; private set; }
+    public AuditInformation AuditInformation { get; private set; }
     
     public string Description { get; }
-    
+
     internal ArtistAggregate(long id, 
         PersonalInformation personalInformation,
         string description, 
@@ -32,10 +34,9 @@ public class ArtistAggregate : BaseAggregateRoot<long>
         return this;
     }
     
-    public ArtistAggregate WithDates(DateTime createdAt, DateTime lastModified)
+    public ArtistAggregate WithAudit(AuditInformation auditInformation)
     {
-        CreatedAt = createdAt;
-        LastModified = lastModified;
+        AuditInformation = auditInformation;
         return this;
     }
 

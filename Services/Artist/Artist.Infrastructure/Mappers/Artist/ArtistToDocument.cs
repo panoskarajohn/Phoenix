@@ -5,7 +5,7 @@ namespace Artist.Infrastructure.Mappers.Artist;
 
 public class ArtistToDocument
 {
-    public static ArtistDocument Map(ArtistAggregate artist, string userId)
+    public static ArtistDocument Map(ArtistAggregate artist)
         => new()
         {
             Id = artist.Id,
@@ -19,10 +19,10 @@ public class ArtistToDocument
             },
             Statistics = Map(artist.ArtistStatistics),
             Status = artist.ArtistStatus.ToString(),
-            CreatedAt = DateTime.UtcNow,
-            CreatedBy = userId,
-            UpdatedAt = DateTime.UtcNow,
-            Version = artist.Version
+            CreatedAt = artist.AuditInformation.CreatedAt,
+            UpdatedAt = artist.AuditInformation.LastModified,
+            Version = artist.Version,
+            CreatedBy = artist.AuditInformation.ModifiedBy
         };
     
     private static ArtistStatistics Map(Core.ValueObjects.ArtistStatistics? artistStatistics)
